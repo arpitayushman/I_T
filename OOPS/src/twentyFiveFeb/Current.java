@@ -15,14 +15,13 @@ public class Current extends Account {
 		super.summary();
 		System.out.println("Overdraft: "+ overdraft);
 	}
-	@Overide
+	
 	public void deposit(double amount) {
 		overdraft += amount;
 		if(overdraft > 10000) {
 			balance += (overdraft - 10000);
 		}
 	}
-	@Overide
 	public void withdraw(double amount) {
 		if(amount <= (balance + overdraft)) {
 			balance -= amount;
